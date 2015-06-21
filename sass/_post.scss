@@ -1,0 +1,21 @@
+.post-container {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 10px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  img {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .nav-links {
+    a.next {
+      float: right;
+    }
+  }
+}
