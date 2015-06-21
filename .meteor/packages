@@ -5,5 +5,14 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 insecure
+iron:router
+underscore
+sacha:spin
+jparker:crypto-core
+jparker:crypto-sha1
+xcv58:collection-api
+ongoworks:speakingurl
+fourseven:scss
+francocatena:compass
+reywood:bootstrap3-sass
