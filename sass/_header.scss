@@ -1,0 +1,27 @@
+.toggleNav {
+  text-align: center;
+
+  @include desktop {
+    display: none;
+  } 
+}
+
+.navigation {
+  text-align: center;
+
+  a {
+    display: block;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+
+  .divider {
+    display: none;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+}
