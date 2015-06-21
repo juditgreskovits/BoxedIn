@@ -21,6 +21,10 @@
   color: #fff;
   padding-bottom: 10px;
 
+  @include desktop {
+    padding-top: 10px;    
+  }
+
   a {
     display: block;
     padding: 10px 0;
