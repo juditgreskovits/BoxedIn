@@ -1,19 +1,22 @@
 <template name="posts">
 
-	{{#each posts}}
-
-		{{> postsPost}}
-
-	{{/each}}
+	<div id="posts-grid" class="posts-grid">
+    {{#each posts}}
+      {{> postsPost}}
+    {{/each}} 
+  </div>
 
 </template>
 
 <template name="postsPost">
 
-	<h4><a href="#">{{ title }}</a></h4>
-	<p>{{ experience }}</p>
-	<p>{{ author }}</p>
-	<p>{{ twitterHandle }}</p>
-	<p>{{ slug }}</p>
+  <div class="post">
+    <img src="{{ image }}" alt="">
+    <h4><a href="#">{{ title }}</a></h4>
+    <p>{{ experience }}</p>
+    <p>{{ author }}</p>
+    <p>{{ twitterHandle }}</p>
+    <p>{{ slug }}</p>
+  </div>
 
 </template>

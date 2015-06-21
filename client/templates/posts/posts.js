@@ -17,3 +17,13 @@ Template.postsPost.events({
 		}
 	}
 });
+
+Template.posts.rendered = function() {
+  $grid = $('#posts-grid');
+  $grid.isotope({
+    itemSelector: '.post',
+    masonry: {
+      columnWidth: 320
+    }
+  });
+}
