@@ -25,7 +25,8 @@ Template.posts.rendered = function() {
       itemSelector: '.post',
       masonry: {
         columnWidth: 320,
-        gutter: 20
+        gutter: 20,
+        isFitWidth: true
       }
     });
   });
