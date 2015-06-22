@@ -1,0 +1,6 @@
+.about, .about-footer {
+	@extend .centered-content;
+	padding-left: 15px;
+	padding-right: 15px;
+	max-width: 600px;
+}

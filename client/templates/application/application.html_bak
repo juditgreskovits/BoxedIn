@@ -1,9 +1,0 @@
-<template name="application">
-
-	{{> menu}}
-
-	{{> yield}}
-
-	{{> footer}}
-		
-</template>
