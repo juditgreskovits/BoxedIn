@@ -4,7 +4,7 @@ if (Post.find().count() === 0) {
 
 	var authors = ['Evelyn Jordan', 'Geraldine Hope', 'Lilian Charles', 'Ludmilla Immaculate'];
 
-	for (var i = 0; i < 10; i++) {
+	for (var i = 0; i < 100; i++) {
 
 		var title = 'What influences your gender';
 		var experience = loremIpsum[getRandomIndex(loremIpsum.length)];

@@ -1,0 +1,15 @@
+body {
+  color: $copy-black;
+}
+
+a {
+  color: $copy-black;
+  
+  &:hover {
+    color: $copy-black;
+  }
+}
+
+hr {
+  border-top: 1px solid $copy-black;
+}

@@ -1,9 +1,19 @@
 <template name="post">
 
-	{{> header}}
+	<div class="post-container">
+    <h2>{{ title }}</h2>
+    <img src="{{ image }}" alt="">
+    <p>{{ experience }}</p>
+    <p>
+      <a href="https://twitter.com/{{ twitterHandle }}">
+        {{ twitterHandle }}
+      </a>
+    </p>
+    <hr>
+    <div class="nav-links">
+      <a href="" class="prev">Previous</a>
+      <a href="" class="next">Next</a>
+    </div>
+  </div>
 
-	<h4>{{ title }}</h4>
-	<p>{{ experience }}</p>
-	<p>{{ author }}</p>
-	<p>{{ twitterHandle }}</p>
 </template>

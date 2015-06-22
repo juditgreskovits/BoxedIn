@@ -1,0 +1,29 @@
+.title {
+  text-align: center;
+}
+
+.posts-grid {
+  padding: 20px;
+
+  // clearfix
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .post {
+    max-width: 320px;
+    margin-bottom: 20px;
+    padding: 10px;
+
+    border-radius: 3px;
+
+    -webkit-box-shadow: 4px 6px 15px 4px #ccc;
+    -moz-box-shadow:    4px 6px 15px 4px #ccc;
+    box-shadow:         4px 6px 15px 4px #ccc;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

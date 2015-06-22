@@ -1,21 +1,28 @@
 <template name="posts">
 
-	{{> postsHeader}}
+  <h3 class="title">Other people's experiences</h3>
 
-	{{#each posts}}
+	<div id="posts-grid" class="posts-grid">
+    {{#each posts}}
+      {{> postsPost}}
+    {{/each}} 
+  </div>
 
-		{{> postsPost}}
-
-	{{/each}}
+  {{> postsFooter}}
 
 </template>
 
 <template name="postsPost">
 
-	<h4><a href="#">{{ title }}</a></h4>
-	<p>{{ experience }}</p>
-	<p>{{ author }}</p>
-	<p>{{ twitterHandle }}</p>
-	<p>{{ slug }}</p>
+  <div class="post">
+    <img src="{{ image }}" alt="">
+    <h4><a href="#" class="title">{{ title }}</a></h4>
+    <p>{{ experience }}</p>
+    <p>
+      <a href="https://twitter.com/{{ twitterHandle }}">
+        {{ twitterHandle }}
+      </a>
+    </p>
+  </div>
 
 </template>
