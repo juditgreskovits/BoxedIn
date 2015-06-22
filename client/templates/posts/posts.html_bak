@@ -1,0 +1,21 @@
+<template name="posts">
+
+	{{> postsHeader}}
+
+	{{#each posts}}
+
+		{{> postsPost}}
+
+	{{/each}}
+
+</template>
+
+<template name="postsPost">
+
+	<h4><a href="#">{{ title }}</a></h4>
+	<p>{{ experience }}</p>
+	<p>{{ author }}</p>
+	<p>{{ twitterHandle }}</p>
+	<p>{{ slug }}</p>
+
+</template>
