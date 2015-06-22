@@ -1,3 +1,8 @@
+.nav-wrapper {
+  border-top: solid $nav-border-grey 1px;
+  border-bottom: solid $nav-border-grey 1px;
+}
+
 .toggleNav {
   height: 45px;
   padding-top: 10px;
@@ -22,7 +27,7 @@
   padding-bottom: 10px;
 
   @include desktop {
-    padding-top: 10px;    
+    padding-top: 10px;
   }
 
   a {
