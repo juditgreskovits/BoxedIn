@@ -1,0 +1,10 @@
+header {
+  height: 205px;
+  background-image: url(img/temp-bg.jpg);
+  background-size: cover;
+  color: white;
+
+  @include desktop {
+    height: 260px;
+  }
+}
