@@ -30,4 +30,9 @@ Template.posts.rendered = function() {
     });
   });
 
+  $(".truncate").dotdotdot({
+    ellipsis  : '...',
+    height: 200
+  });
+
 }
