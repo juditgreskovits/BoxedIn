@@ -4,6 +4,7 @@ body {
 
 a {
   color: $copy-black;
+  text-decoration: underline;
   
   &:hover {
     color: $copy-black;

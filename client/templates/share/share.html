@@ -1,3 +1,39 @@
 <template name="share">
-	<p>Share</p>
+	<section id="share" class="share">
+		<h3 class="title">Share Your Experiences</h3>
+		<p>You can tell us your epxeriences in a couple of ways, by hashtagging <u>#BoxedInProject</u> on Twitter or Instagram. Or by filling in the form below.</p>
+		<form id="share-form" class="share-form">
+
+			<div class="share-form-title">
+				<select name="title-1">
+					<option value="">Please select</option>
+					<option value="who">Who</option>
+					<option value="what">What</option>
+					<option value="where">Where</option>
+				</select>
+
+				<select name="title-2">
+					<option value="">-</option>
+				</select>
+
+				<select name="title-3">
+					<option value="">-</option>
+				</select>
+
+				<select name="title-4">
+					<option value="">gender?</option>
+				</select>
+			</div>
+
+			<div class="share-form-content">
+				<input type="text" name="name" id="form-name" value="" class="name form-input" placeholder="Your name (optional)">
+				<input type="text" name="name" id="form-name" value="" class="name form-input" placeholder="@YourTwitterHandle (optional)">
+				<input type="textArea" name="name" id="form-name" value="" class="name form-input" placeholder="Your experiences (optional)">
+				<input type="text" name="name" id="form-name" value="" class="name form-input" placeholder="Link to photo, video or post (optional)">
+				<a href="#">Upload a photo</a>
+				<hr/>
+				<input type="submit" name="submit" id="form-submit" value="Submit your experience" class="submit form-submit"/>
+			</div>
+		</form>
+	</section>
 </template>
