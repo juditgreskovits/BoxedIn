@@ -27,3 +27,49 @@ if (Post.find().count() === 0) {
 		});
 	}
 }
+
+if(Title.find().count() === 0) {
+
+	var title2_0 = [{title: 'your'}, {title: 'his'}, {title: 'her'}, {title: 'my'}, {title: 'our'}];
+	var title2_1 = [{title: 'taught your'}];
+	var title2_2 = [{title: 'taught his'}];
+	var title2_3 = [{title: 'taught her'}];
+	var title2_4 = [{title: 'taught their'}];
+	var title2_5 = [{title: 'taught our'}];
+
+	var title1_0 = {title: 'influences', after: title2_0};
+	var title1_1 = {title: 'influenced', after: title2_0};
+	var title1_2 = {title: 'directs', after: title2_0};
+	var title1_3 = {title: 'directed', after: title2_0};
+	var title1_4 = {title: 'taught', after: title2_0};
+	var title1_5 = {title: 'influences', after: title2_0};
+
+	var title1_6 = {title: 'are you', after: title2_1};
+	var title1_7 = {title: 'were you', after: title2_1};
+	var title1_8 = {title: 'is he', after: title2_2};
+	var title1_9 = {title: 'was he', after: title2_2};
+	var title1_10 = {title: 'is she', after: title2_3};
+	var title1_11 = {title: 'was she', after: title2_3};
+	var title1_12 = {title: 'are they', after: title2_4};
+	var title1_13 = {title: 'were they', after: title2_4};
+	var title1_14 = {title: 'are we', after: title2_5};
+	var title1_15 = {title: 'were we', after: title2_5};
+
+	var title1_16 = {title: 'decides', after: title2_0};
+	var title1_17 = {title: 'decided', after: title2_0};
+	var title1_18 = {title: 'create', after: title2_0};
+	var title1_19 = {title: 'creates', after: title2_0};
+	var title1_20 = {title: 'created', after: title2_0};
+	var title1_21 = {title: 'constructs', after: title2_0};
+	var title1_22 = {title: 'constructed', after: title2_0};
+
+	var title0_0 = {title: 'What', after: [title1_0, title1_1, title1_2, title1_3, title1_4, title1_16, title1_17, title1_19, title1_20, title1_22]};
+	var title0_1 = {title: 'Who', after: [title1_0, title1_1, title1_2, title1_3, title1_4, title1_16, title1_17, title1_19, title1_20, title1_21, title1_22]};
+	var title0_2 = {title: 'Where', after: [title1_6, title1_7, title1_8, title1_9, title1_10, title1_11, title1_12, title1_13, title1_14, title1_15]};
+	var title0_3 = {title: 'When', after: [title1_6, title1_7, title1_8, title1_9, title1_10, title1_11, title1_12, title1_13, title1_14, title1_15]};
+
+	Title.insert(title0_0);
+	Title.insert(title0_1);
+	Title.insert(title0_2);
+	Title.insert(title0_3);
+}

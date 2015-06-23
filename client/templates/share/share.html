@@ -7,9 +7,11 @@
 			<div class="share-form-title">
 				<select name="title-1">
 					<option value="">Please select</option>
-					<option value="who">Who</option>
-					<option value="what">What</option>
-					<option value="where">Where</option>
+
+					{{#each titles}}
+						<option value="{{title}}">{{title}}</option>
+					{{/each}}
+
 				</select>
 
 				<select name="title-2">
