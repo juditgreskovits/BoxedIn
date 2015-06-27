@@ -2,22 +2,29 @@
 	<section id="share" class="share">
 		<h3 class="title">Share Your Experiences</h3>
 		<p>You can tell us your epxeriences in a couple of ways, by hashtagging <u>#BoxedInProject</u> on Twitter or Instagram. Or by filling in the form below.</p>
+		<p>{{counter}}</p>
 		<form id="share-form" class="share-form">
 
 			<div class="share-form-title">
-				<select name="title-1">
+				<select id="title-1" name="title-1">
 					<option value="">Please select</option>
-					<option value="who">Who</option>
-					<option value="what">What</option>
-					<option value="where">Where</option>
+
+					{{#each titles1}}
+						<option value="{{title}}">{{title}}</option>
+					{{/each}}
+
 				</select>
 
-				<select name="title-2">
-					<option value="">-</option>
+				<select id="title-2" name="title-2">
+					{{#each titles2}}
+						<option value="{{title}}">{{title}}</option>
+					{{/each}}
 				</select>
 
-				<select name="title-3">
-					<option value="">-</option>
+				<select id="title-3" name="title-3">
+					{{#each titles3}}
+						<option value="{{title}}">{{title}}</option>
+					{{/each}}
 				</select>
 
 				<select name="title-4">

@@ -1,5 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Cardo:400,700);
+
+$cardo: 'Cardo', sans-serif;
+
 body {
-  color: $copy-black;
+	font-family: $cardo;
+ 	color: $copy-black;
 }
 
 a {
