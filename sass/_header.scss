@@ -1,10 +1,21 @@
 header {
   height: 205px;
-  background-image: url(img/temp-bg.jpg);
+  background: rgb(193, 150, 111);
   background-size: cover;
   color: white;
+  text-align: center;
 
   @include desktop {
     height: 260px;
+  }
+
+  img {
+    margin-top: 10px;
+    width: 90%;
+    max-width: 398px;
+
+    @include desktop {
+      margin-top: 45px;
+    }
   }
 }
