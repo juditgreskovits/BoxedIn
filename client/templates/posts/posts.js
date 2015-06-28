@@ -91,15 +91,11 @@ Template.posts.rendered = function() {
   refreshQuestion();
 
   // set them going
-  setInterval(function() {
+  var interval = setInterval(function() {
     refreshQuestion();
   }, 5*1000);
-
-  // // debugging - press f key to flip the question
-  // $(document).keypress(function(e) {
-  //   if(e.which === 102) {
-  //     refreshQuestion();
-  //   }
-  // })
+  // store this in the session so we can cancel it when the user
+  // navigates to another route
+  Session.set('interval', interval);
 
 }
