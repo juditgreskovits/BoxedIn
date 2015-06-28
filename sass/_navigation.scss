@@ -1,0 +1,51 @@
+.nav-wrapper {
+  border-top: solid $nav-border-grey 1px;
+  border-bottom: solid $nav-border-grey 1px;
+}
+
+.toggleNav {
+  height: 45px;
+  padding-top: 10px;
+
+  text-align: center;
+  background-color: $nav-grey;
+  color: #fff;
+
+  @include desktop {
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.navigation {
+  text-align: center;
+  background-color: $nav-grey;
+  color: #fff;
+  padding-bottom: 10px;
+
+  @include desktop {
+    padding-top: 10px;
+  }
+
+  a {
+    display: block;
+    padding: 10px 0;
+
+    color: #fff;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+
+  .divider {
+    display: none;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+}

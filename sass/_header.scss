@@ -1,46 +1,30 @@
-.toggleNav {
-  height: 45px;
-  padding-top: 10px;
-
-  text-align: center;
-  background-color: $nav-grey;
-  color: #fff;
+.header-wrapper {
+  height: 205px;
+  overflow: hidden;
+  background: rgb(193, 150, 111);
 
   @include desktop {
-    display: none;
+    height: 260px;
   }
-
-  &:hover {
-    cursor: pointer;
+  
+  &.with-inspiration {
+    height: auto;
   }
 }
 
-.navigation {
+header {
+  height: 100%;
+  background-size: cover;
+  color: white;
   text-align: center;
-  background-color: $nav-grey;
-  color: #fff;
-  padding-bottom: 10px;
 
-  @include desktop {
-    padding-top: 10px;    
-  }
-
-  a {
-    display: block;
-    padding: 10px 0;
-
-    color: #fff;
+  img {
+    margin-top: 10px;
+    width: 90%;
+    max-width: 398px;
 
     @include desktop {
-      display: inline;
-    }
-  }
-
-  .divider {
-    display: none;
-
-    @include desktop {
-      display: inline;
+      margin-top: 45px;
     }
   }
 }

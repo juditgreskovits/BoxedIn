@@ -1,0 +1,65 @@
+.inspiration {
+  width: 80%;
+  height: 170px;
+  margin: 20px auto;
+
+  @include desktop {
+    height: 100px;
+    margin: 40px auto;
+  }
+}
+
+.row {
+  margin: 0;
+
+  @include desktop {
+    float: left;
+    width: 50%;
+  }
+
+  &:nth-of-type(1) {
+    .word:nth-of-type(1) {
+      background: $word-light-blue;
+      border-radius: 5px 0px 0px 0px;
+      @include desktop {
+        border-radius: 5px 0px 0px 5px;
+      }
+    }
+
+    .word:nth-of-type(2) {
+      background: $word-dark-blue;
+      border-radius: 0px 5px 0px 0px;
+      @include desktop {
+        border-radius: 0px;
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    .word:nth-of-type(1) {
+      background: $word-purple;
+      border-radius: 0px 0px 0px 5px;
+      @include desktop {
+        border-radius: 0px;
+      }
+    }
+
+    .word:nth-of-type(2) {
+      background: $word-pink;
+      border-radius: 0px 0px 5px 0px;
+      @include desktop {
+        border-radius: 0px 5px 5px 0px;
+      }
+    }
+  }
+
+  .word {
+    width: 50%;
+    height: 85px;
+    float: left;
+
+    @include desktop {
+      // height: 190px;
+    }  
+  }
+}
