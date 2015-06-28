@@ -5,9 +5,26 @@ Session.setDefault('colorOffset', 0);
 Template.posts.helpers({
 
 	posts: function() {
-		return Post.find();
-	}
+		// return Post.find();
+    return Template.instance().posts();
+	},
+  hasMorePosts: function () {
+    return Template.instance().posts().count() >=
+      Template.instance().limit.get();
+  }
 });
+
+Template.posts.events({
+  'click, #load-more': function (event, instance) {
+    event.preventDefault();
+    // get current value for limit, i.e. how many posts are currently displayed
+    var limit = instance.limit.get();
+    // increase limit by 5 and update it
+    limit += 20;
+    instance.limit.set(limit);
+
+  }
+})
 
 Template.postsPost.events({
 	'click, touchend a.title': function(e) {
@@ -16,6 +33,40 @@ Template.postsPost.events({
 			Router.go('post', {slug: this.slug});
 		}
 	}
+});
+
+Template.posts.onCreated(function() {
+  var instance = this;
+
+  // initialize the reactive variables
+  instance.loaded = new ReactiveVar(0);
+  instance.limit = new ReactiveVar(20);
+
+  // will re-run when the "limit" reactive variables changes
+  instance.autorun(function () {
+
+    // get the limit
+    var limit = instance.limit.get();
+
+    // subscribe to the posts publication
+    var subscription = instance.subscribe('post', limit);
+
+    // if subscription is ready, set limit to newLimit
+    if (subscription.ready()) {
+      console.log("> Received "+limit+" posts. \n\n")
+      instance.loaded.set(limit);
+      // this is where it falls to pieces :(
+      $('#posts-grid').imagesLoaded( function() {
+        $grid.isotope('layout');
+      });
+    } else {
+      console.log("> Subscription is not ready yet. \n\n");
+    }
+  });
+
+  instance.posts = function() { 
+    return Post.find({}, {limit: instance.loaded.get()});
+  }
 });
 
 function initQuestionAnimation() {
