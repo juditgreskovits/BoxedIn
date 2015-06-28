@@ -1,10 +1,9 @@
 .inspiration {
-  width: 80%;
+  width: 90%;
   height: 170px;
   margin: 20px auto;
 
   @include desktop {
-    height: 100px;
     margin: 40px auto;
   }
 }
@@ -19,12 +18,6 @@
 
   &:nth-of-type(1) {
     .word:nth-of-type(1) {
-      // .front {
-      //   background: $word-light-blue;
-      // }
-      // .back {
-      //   background: $word-dark-blue;
-      // }
       border-radius: 5px 0px 0px 0px;
       @include desktop {
         border-radius: 5px 0px 0px 5px;
@@ -32,12 +25,6 @@
     }
 
     .word:nth-of-type(2) {
-      // .front {
-      //   background: $word-dark-blue;
-      // }
-      // .back {
-      //   background: $word-purple;
-      // }
       border-radius: 0px 5px 0px 0px;
       @include desktop {
         border-radius: 0px;
@@ -47,12 +34,6 @@
 
   &:nth-of-type(2) {
     .word:nth-of-type(1) {
-      // .front {
-      //   background: $word-purple;
-      // }
-      // .back {
-      //   background: $word-pink;
-      // }
       border-radius: 0px 0px 0px 5px;
       @include desktop {
         border-radius: 0px;
@@ -60,12 +41,6 @@
     }
 
     .word:nth-of-type(2) {
-      // .front {
-      //   background: $word-pink;
-      // }
-      // .back {
-      //   background: $word-light-blue;
-      // }
       border-radius: 0px 0px 5px 0px;
       @include desktop {
         border-radius: 0px 5px 5px 0px;
@@ -78,6 +53,10 @@
     height: 85px;
     float: left;
     overflow: hidden;
+
+    @include desktop {
+      height: 160px;
+    }
 
     .front, .back {
       width: 100%;
@@ -98,10 +77,6 @@
       &.colour-3 {
         background: $word-pink;
       }
-    }
-
-    @include desktop {
-      // height: 190px;
     }  
   }
 }
