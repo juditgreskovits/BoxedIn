@@ -18,6 +18,14 @@ Template.postsPost.events({
 	}
 });
 
+function initQuestionAnimation() {
+  $('.word').flip({
+      trigger: 'manual',
+      axis: 'x',
+      speed: Session.get('flipDuration')
+    });
+}
+
 function randomQuestion() {
   var titles = Title.find().fetch();
   var word0 = titles[getRandomIndex(titles.length)];
@@ -83,11 +91,7 @@ Template.posts.rendered = function() {
   });
 
   // initialise questions
-  $('.word').flip({
-    trigger: 'manual',
-    axis: 'x',
-    speed: Session.get('flipDuration')
-  });
+  initQuestionAnimation();
   refreshQuestion();
 
   // set them going
@@ -97,5 +101,8 @@ Template.posts.rendered = function() {
   // store this in the session so we can cancel it when the user
   // navigates to another route
   Session.set('interval', interval);
+
+  // re
+  $(window).resize(initQuestionAnimation)
 
 }
