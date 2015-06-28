@@ -19,7 +19,12 @@
 
   &:nth-of-type(1) {
     .word:nth-of-type(1) {
-      background: $word-light-blue;
+      // .front {
+      //   background: $word-light-blue;
+      // }
+      // .back {
+      //   background: $word-dark-blue;
+      // }
       border-radius: 5px 0px 0px 0px;
       @include desktop {
         border-radius: 5px 0px 0px 5px;
@@ -27,7 +32,12 @@
     }
 
     .word:nth-of-type(2) {
-      background: $word-dark-blue;
+      // .front {
+      //   background: $word-dark-blue;
+      // }
+      // .back {
+      //   background: $word-purple;
+      // }
       border-radius: 0px 5px 0px 0px;
       @include desktop {
         border-radius: 0px;
@@ -37,7 +47,12 @@
 
   &:nth-of-type(2) {
     .word:nth-of-type(1) {
-      background: $word-purple;
+      // .front {
+      //   background: $word-purple;
+      // }
+      // .back {
+      //   background: $word-pink;
+      // }
       border-radius: 0px 0px 0px 5px;
       @include desktop {
         border-radius: 0px;
@@ -45,7 +60,12 @@
     }
 
     .word:nth-of-type(2) {
-      background: $word-pink;
+      // .front {
+      //   background: $word-pink;
+      // }
+      // .back {
+      //   background: $word-light-blue;
+      // }
       border-radius: 0px 0px 5px 0px;
       @include desktop {
         border-radius: 0px 5px 5px 0px;
@@ -57,6 +77,28 @@
     width: 50%;
     height: 85px;
     float: left;
+    overflow: hidden;
+
+    .front, .back {
+      width: 100%;
+      height: 100%;
+      background-position: 50% 50%;
+      -webkit-transition: background-position none !important;
+      transition: background-position none !important;
+
+      &.colour-0 {
+        background: $word-light-blue;
+      }
+      &.colour-1 {
+        background: $word-dark-blue;
+      }
+      &.colour-2 {
+        background: $word-purple;
+      }
+      &.colour-3 {
+        background: $word-pink;
+      }
+    }
 
     @include desktop {
       // height: 190px;
