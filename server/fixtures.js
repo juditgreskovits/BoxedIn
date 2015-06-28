@@ -30,46 +30,167 @@ if (Post.find().count() === 0) {
 
 if(Title.find().count() === 0) {
 
-	var title2_0 = [{title: 'your'}, {title: 'his'}, {title: 'her'}, {title: 'my'}, {title: 'our'}];
-	var title2_1 = [{title: 'taught your'}];
-	var title2_2 = [{title: 'taught his'}];
-	var title2_3 = [{title: 'taught her'}];
-	var title2_4 = [{title: 'taught their'}];
-	var title2_5 = [{title: 'taught our'}];
+	var title2_0 = {
+    title: 'her'
+  };
+  var title2_1 = {
+    title: 'his'
+  };
+  var title2_2 = {
+    title: 'my'
+  };
+  var title2_3 = {
+    title: 'our'
+  };
+  var title2_4 = {
+    title: 'their'
+  };
+  var title2_5 = {
+    title: 'your'
+  };
 
-	var title1_0 = {title: 'influences', after: title2_0};
-	var title1_1 = {title: 'influenced', after: title2_0};
-	var title1_2 = {title: 'directs', after: title2_0};
-	var title1_3 = {title: 'directed', after: title2_0};
-	var title1_4 = {title: 'taught', after: title2_0};
-	var title1_5 = {title: 'influences', after: title2_0};
 
-	var title1_6 = {title: 'are you', after: title2_1};
-	var title1_7 = {title: 'were you', after: title2_1};
-	var title1_8 = {title: 'is he', after: title2_2};
-	var title1_9 = {title: 'was he', after: title2_2};
-	var title1_10 = {title: 'is she', after: title2_3};
-	var title1_11 = {title: 'was she', after: title2_3};
-	var title1_12 = {title: 'are they', after: title2_4};
-	var title1_13 = {title: 'were they', after: title2_4};
-	var title1_14 = {title: 'are we', after: title2_5};
-	var title1_15 = {title: 'were we', after: title2_5};
+	// second box
+  var title1_0 = {
+    title: 'constructed',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
+  var title1_1 = {
+    title: 'constructs',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
+	
+  var title1_2 = {
+    title: 'create',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
+  var title1_3 = {
+    title: 'created',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
+  var title1_4 = {
+    title: 'creates',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
 
-	var title1_16 = {title: 'decides', after: title2_0};
-	var title1_17 = {title: 'decided', after: title2_0};
-	var title1_18 = {title: 'create', after: title2_0};
-	var title1_19 = {title: 'creates', after: title2_0};
-	var title1_20 = {title: 'created', after: title2_0};
-	var title1_21 = {title: 'constructs', after: title2_0};
-	var title1_22 = {title: 'constructed', after: title2_0};
+  var title1_5 = {
+    title: 'decide',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
+  var title1_6 = {
+    title: 'decided',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
+  var title1_7 = {
+    title: 'decides',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
 
-	var title0_0 = {title: 'What', after: [title1_0, title1_1, title1_2, title1_3, title1_4, title1_16, title1_17, title1_19, title1_20, title1_22]};
-	var title0_1 = {title: 'Who', after: [title1_0, title1_1, title1_2, title1_3, title1_4, title1_16, title1_17, title1_19, title1_20, title1_21, title1_22]};
-	var title0_2 = {title: 'Where', after: [title1_6, title1_7, title1_8, title1_9, title1_10, title1_11, title1_12, title1_13, title1_14, title1_15]};
-	var title0_3 = {title: 'When', after: [title1_6, title1_7, title1_8, title1_9, title1_10, title1_11, title1_12, title1_13, title1_14, title1_15]};
+  var title1_8 = {
+    title: 'directed',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
+  var title1_9 = {
+    title: 'directs',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
 
+  var title1_10 = {
+    title: 'influenced',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
+  var title1_11 = {
+    title: 'influences',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
+
+  var title1_12 = {
+    title: 'he-taught',
+    after: [title2_1]
+  };
+  var title1_13 = {
+    title: 'she-taught',
+    after: [title2_0]
+  };
+  var title1_14 = {
+    title: 'they-taught',
+    after: [title2_4]
+  };
+  var title1_15 = {
+    title: 'we-taught',
+    after: [title2_3]
+  };
+  var title1_16 = {
+    title: 'you-taught',
+    after: [title2_5]
+  };
+  var title1_17 = {
+    title: 'taught',
+    after: [title2_0, title2_1, title2_2, title2_3, title2_5]
+  };
+
+
+  // first box
+	var title0_0 = {
+    title: 'what',
+    after: [title1_8, title1_9, title1_10, title1_11, title1_17, title1_6, title1_7, title1_3, title1_0]
+  };
+  var title0_1 = {
+    title: 'when-are',
+    after: [title1_14, title1_15, title1_16]
+  };
+  var title0_2 = {
+    title: 'when-is',
+    after: [title1_12, title1_13]
+  };
+  var title0_3 = {
+    title: 'when-was',
+    after: [title1_12, title1_13]
+  };
+  var title0_4 = {
+    title: 'when-were',
+    after: [title1_14, title1_15, title1_16]
+  };
+	var title0_5 = {
+    title: 'when',
+    after: [title1_7]
+  };
+  var title0_6 = {
+    title: 'where-are',
+    after: [title1_14, title1_15, title1_16]
+  };
+  var title0_7 = {
+    title: 'where-is',
+    after: [title1_12, title1_13]
+  };
+  var title0_8 = {
+    title: 'where-was',
+    after: [title1_12, title1_13]
+  };
+  var title0_9 = {
+    title: 'where-were',
+    after: [title1_14, title1_15, title1_16]
+  };
+  var title0_10 = {
+    title: 'who',
+    after: [title1_0, title1_1, title1_3, title1_4, title1_6, title1_7, title1_8, title1_9, title1_10, title1_11, title1_17]
+  };
+  var title0_11 = {
+    title: 'why',
+    after: [title1_2, title1_5]
+  };
+
+  // insert
 	Title.insert(title0_0);
 	Title.insert(title0_1);
 	Title.insert(title0_2);
 	Title.insert(title0_3);
+  Title.insert(title0_4);
+  Title.insert(title0_5);
+  Title.insert(title0_6);
+  Title.insert(title0_7);
+  Title.insert(title0_8);
+  Title.insert(title0_9);
+  Title.insert(title0_10);
+  Title.insert(title0_11);
 }
