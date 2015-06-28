@@ -1,13 +1,22 @@
-header {
+.header-wrapper {
   height: 205px;
+  overflow: hidden;
   background: rgb(193, 150, 111);
-  background-size: cover;
-  color: white;
-  text-align: center;
 
   @include desktop {
     height: 260px;
   }
+  
+  &.with-inspiration {
+    height: auto;
+  }
+}
+
+header {
+  height: 100%;
+  background-size: cover;
+  color: white;
+  text-align: center;
 
   img {
     margin-top: 10px;
