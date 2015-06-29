@@ -31,7 +31,7 @@ function randomQuestion() {
   var word0 = titles[getRandomIndex(titles.length)];
   var word1 = word0.after[getRandomIndex(word0.after.length)];
   var word2 = word1.after[getRandomIndex(word1.after.length)];
-  var word3 = {title: 'gender-q'};
+  var word3 = {id: 'gender-q'};
   return question = [word0.id, word1.id, word2.id, word3.id];
 }
 
