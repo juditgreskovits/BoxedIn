@@ -1,3 +1,18 @@
-input {
-	@include css3-prefix(border-radius, 0);
+.form-item {
+	@include css3-prefix(border-radius, 3px);
+	border:1px solid $copy-black;
+	&:focus {
+		outline: none;
+	}
+}
+
+.form-input{
+	-webkit-appearance: none;
+	@extend .form-item;
+
+	padding: 8px 10px;
+
+	&:focus {
+		background-color: #e6e6e6;
+	}
 }

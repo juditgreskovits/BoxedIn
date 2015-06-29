@@ -6,7 +6,44 @@
 		<form id="share-form" class="share-form">
 
 			<div class="share-form-title">
-				<select id="title-1" name="title-1">
+
+				<div class="title-group btn-group">
+		            <button type="button" data-toggle="dropdown" id="title-1" class="title-button form-input btn btn-default dropdown-toggle">
+		            	{{title1}} 
+		            	<span class="caret"></span>
+		            </button>
+		            <ul class="title-dropdown dropdown-menu">
+		                {{#each titles1}}
+							<li id="{{title}}" class="title1-option title-option"><a href="#">{{title}}</a></li>
+						{{/each}}
+		            </ul>
+		        </div>
+
+		        <div class="title-group btn-group">
+		            <button type="button" data-toggle="dropdown" id="title-2" class="title-button form-input btn btn-default dropdown-toggle">
+		            	{{title2}} 
+		            	<span class="caret"></span>
+		            </button>
+		            <ul class="title-dropdown dropdown-menu">
+		                {{#each titles2}}
+							<li id="{{title}}" class="title2-option title-option"><a href="#">{{title}}</a></li>
+						{{/each}}
+		            </ul>
+		        </div>
+
+		        <div class="title-group btn-group">
+		            <button type="button" data-toggle="dropdown" id="title-3" class="title-button form-input btn btn-default dropdown-toggle">
+		            	{{title3}} 
+		            	<span class="caret"></span>
+		            </button>
+		            <ul class="title-dropdown dropdown-menu">
+		                {{#each titles3}}
+							<li id="{{title}}" class="title3-option title-option"><a href="#">{{title}}</a></li>
+						{{/each}}
+		            </ul>
+		        </div>
+
+				<!--<select id="title-1" name="title-1">
 					<option value="">Please select</option>
 
 					{{#each titles1}}
@@ -29,14 +66,14 @@
 
 				<select name="title-4">
 					<option value="">gender?</option>
-				</select>
+				</select>-->
 			</div>
 
 			<div class="share-form-content">
 				<input type="text" name="name" id="form-name" value="" class="name form-input" placeholder="Your name (optional)">
-				<input type="text" name="name" id="form-name" value="" class="name form-input" placeholder="@YourTwitterHandle (optional)">
-				<input type="textArea" name="name" id="form-name" value="" class="name form-input" placeholder="Your experiences (optional)">
-				<input type="text" name="name" id="form-name" value="" class="name form-input" placeholder="Link to photo, video or post (optional)">
+				<input type="text" name="twitter-handle" id="form-twitter-handle" value="" class="name form-input" placeholder="@YourTwitterHandle (optional)">
+				<input type="textArea" name="experience" id="form-experience" value="" class="name form-input" placeholder="Your experiences (optional)">
+				<input type="text" name="link" id="form-link" value="" class="name form-input" placeholder="Link to photo, video or post (optional)">
 				<a href="#">Upload a photo</a>
 				<hr/>
 				<input type="submit" name="submit" id="form-submit" value="Submit your experience" class="submit form-submit"/>
