@@ -117,8 +117,8 @@ Template.posts.rendered = function() {
   var interval = setInterval(function() {
     refreshQuestion();
   }, 5*1000);
-  store this in the session so we can cancel it when the user
-  navigates to another route
+  // store this in the session so we can cancel it when the user
+  // navigates to another route
   Session.set('interval', interval);
 
   // re-initialise whenever the viewport width updates
