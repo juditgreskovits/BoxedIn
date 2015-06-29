@@ -4,6 +4,10 @@ Template.share.onCreated(function() {
 	Template.instance().title2 = new ReactiveVar('-');
 	Template.instance().title3 = new ReactiveVar('-');
 
+	Template.instance().titleId1 = new ReactiveVar(null);
+	Template.instance().titleId2 = new ReactiveVar(null);
+	Template.instance().titleId3 = new ReactiveVar(null);
+
 	Session.set('shareErrors', {});
 });
 
@@ -31,26 +35,36 @@ Template.share.helpers({
 
 	titles2: function() {
 
-		var title1 = Template.instance().title1.get();
-		if(title1 && title1 != 'Please select') {
-			return Title.findOne({title: title1}).after;
+		var titleId1 = Template.instance().titleId1.get();
+		if(titleId1) {
+			var after = Title.findOne({id: titleId1}).after;
+			var firstAfter = after[0];
+			Template.instance().titleId2.set(firstAfter.id);
+			Template.instance().title2.set(firstAfter.title);
+			$('form button#title-2').removeClass('disabled');
+			return after;
 		}
 		return null;
 	},
 
 	titles3: function() {
 
-		var title2 = Template.instance().title2.get();
-		if(title2 && title2 != '-') {
-			var titles2 = Title.findOne({title: Template.instance().title1.get()}).after;
-			var ts3;
+		var titleId2 = Template.instance().titleId2.get();
+		if(titleId2) {
+			var titleId1 = Template.instance().titleId1.get();
+			var titles2 = Title.findOne({id: titleId1}).after;
+			var after;
 			titles2.forEach(function(t2){
-				if(t2.title === title2){
-					ts3 = t2.after
+				if(t2.id === titleId2){
+					after = t2.after;
+					var firstAfter = after[0];
+					Template.instance().titleId3.set(firstAfter.id);
+					Template.instance().title3.set(firstAfter.title);
 					return false;
 				}
 			});
-			return ts3;
+			$('form button#title-3').removeClass('disabled');
+			return after;
 		}
 		return null;
 	}
@@ -60,40 +74,46 @@ Template.share.events({
 
 	'click li.title1-option': function(e) {
 
-		Template.instance().title1.set(e.currentTarget.id);
+		Template.instance().titleId1.set(e.currentTarget.id);
+		Template.instance().title1.set(e.currentTarget.innerText);
 	},
 
 	'click li.title2-option': function(e) {
 
-		Template.instance().title2.set(e.currentTarget.id);
+		Template.instance().titleId2.set(e.currentTarget.id);
+		Template.instance().title2.set(e.currentTarget.innerText);
 	},
 
 	'click li.title3-option': function(e) {
 
-		Template.instance().title3.set(e.currentTarget.id);
+		Template.instance().titleId3.set(e.currentTarget.id);
+		Template.instance().title3.set(e.currentTarget.innerText);
 	},
 
-	/*'change select#title1': function(e) {
-
-		Template.instance().title1.set(e.target.value);
+	'focus input#form-experience': function(e) {
+		console.log('focus');
+		$('input#form-experience').addClass();
 	},
-
-	'change select#title2': function(e) {
-
-		Template.instance().title2.set(e.target.value);
-	},
-
-	'change select#title3': function(e) {
-
-		Template.instance().title3.set(e.target.value);
-	},*/
 
 	'submit form#share-form': function(e) {
-
+		console.log('submit');
 		e.preventDefault();
 
+		var titleId1 = Template.instance().titleId1.get();
+		var titleId2 = Template.instance().titleId2.get();
+		var titleId3 = Template.instance().titleId3.get();
+
+		var title1 = Template.instance().title1.get();
+		var title2 = Template.instance().title2.get();
+		var title3 = Template.instance().title3.get();
+
 		var share = {
-			title: 'tmp title',
+			title: title1 + ' ' + title2 + ' ' + title3 + ' gender?',
+
+			titleId1: titleId1,
+			titleId2: titleId2,
+			titleId3: titleId3,
+
 			name: $(e.target).find('[name=name]').val(),
 			twitterHandle: $(e.target).find('[name=twitter-handle]').val(),
 			experience: $(e.target).find('[name=experience]').val(),
@@ -102,14 +122,22 @@ Template.share.events({
 
 		var errors = validatePost(share);
 		if(errors) {
-			return Session.set('shareErrors', errors);
-		}
-		Meteor.call('sendPost', share, function(error, result){
-			if(error) {
-				// display send error
-			}
+			console.log('errors = ' + errors);
 
-			// display send success
-		});
+			if(errors.title) {
+				$('p#title-error').show();
+			}
+			if(errors.content) {
+				$('p#content-error').show();
+			}
+		}
+		else {
+			Meteor.call('sendPost', share, function(error, result){
+				if(error) {
+					$('p#send-error').show();
+				}
+				$('p#send-success').show();
+			});
+		}
 	}
 });

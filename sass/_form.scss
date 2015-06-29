@@ -6,13 +6,24 @@
 	}
 }
 
-.form-input{
+.form-input {
 	-webkit-appearance: none;
 	@extend .form-item;
 
 	padding: 8px 10px;
 
 	&:focus {
+		@extend .focus-shadow;
 		background-color: #e6e6e6;
 	}
+}
+
+.form-error {
+	color: $word-purple;
+	font-weight: 700;
+	display: none;
+}
+
+.form-success {
+	color: $word-dark-blue;
 }

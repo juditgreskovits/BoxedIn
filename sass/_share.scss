@@ -3,13 +3,9 @@
 	padding-left: 15px;
 	padding-right: 15px;
 	max-width: 700px;
+	margin-bottom: 40px;
 
-	h3 {
-		margin-top: 40px;
-		margin-bottom: 30px;
-	}
-
-	p {
+	div.share-heading {
 		@extend .centered-content;
 		max-width: 600px;
 		margin-bottom: 20px;
@@ -17,23 +13,33 @@
 
 	div.share-form-title {
 		@extend .centered-content;
-		max-width: 700px;
+		max-width: 600px;
+		@include desktop {
+			max-width: 700px;
+		}
 		margin-bottom: 8px;
 
 		div.title-group {
 			@extend .content-shadow;
-			width: 23.5%;
+			width: 100%;
+			@include desktop {
+				width: 23.5%;
+			}
 			margin-right: 1%;
 			margin-bottom: 12px;
 			&:last-child {
 				margin-right: 0;
 			}
-			button.title-button {
+			.title-button {
 				width: 100%;
 				@extend .form-item;
 				text-align: left;
 				span {
-					right: 0;
+					margin-top: 8px;
+					float: right;
+				}
+				&.disabled {
+					opacity: 1.0;
 				}
 			}
 			ul.title-dropdown {
@@ -50,18 +56,37 @@
 	div.share-form-content {
 		@extend .centered-content;
 		max-width: 600px;
-		input.form-input {
+		div.form-input-group {
 			@extend .content-shadow;
 			margin-bottom: 12px;
 
-			width: 100%;
+			.form-input {
+				width: 100%;
+			}
 		}
-		input.form-submit {
-			background-color: transparent;
-			border: none;
-			padding: 0;
-			text-decoration: underline;
-			font-weight: 700;
+		textarea#form-experience {
+			vertical-align: top;
+			resize: none;
+			height: 36px;
+			@include css3-prefix(transition, height 0.3s ease-out);
+			&:focus {
+				height: 120px;
+			}
+		}
+		div.from-submit-group {
+			p {
+				margin-bottom: 3px;
+			}
+			input.form-submit {
+				background-color: transparent;
+				border: none;
+				padding: 0;
+				text-decoration: underline;
+				font-weight: 700;
+				&:focus {
+					outline: none;
+				}
+			}
 		}
 		hr {
 			margin-top: 16px;

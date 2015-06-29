@@ -1,83 +1,97 @@
 <template name="share">
 	<section id="share" class="share">
-		<h3 class="title">Share Your Experiences</h3>
-		<p>You can tell us your epxeriences in a couple of ways, by hashtagging <u>#BoxedInProject</u> on Twitter or Instagram. Or by filling in the form below.</p>
-		<p>{{counter}}</p>
-		<form id="share-form" class="share-form">
+		<div class="share-heading">
+			<h3 class="title">Share Your Experiences</h3>
+			<p>You can tell us your epxeriences in a couple of ways, by hashtagging <a href="#">#BoxedInProject</a> on Twitter or Instagram. Or by filling in the form below.</p>
+			<p>{{counter}}</p>
+		</div>
+		<div class="share-content">
+			<form id="share-form" class="share-form">
 
-			<div class="share-form-title">
+				<div class="share-form-title">
 
-				<div class="title-group btn-group">
-		            <button type="button" data-toggle="dropdown" id="title-1" class="title-button form-input btn btn-default dropdown-toggle">
-		            	{{title1}} 
-		            	<span class="caret"></span>
-		            </button>
-		            <ul class="title-dropdown dropdown-menu">
-		                {{#each titles1}}
-							<li id="{{title}}" class="title1-option title-option"><a href="#">{{title}}</a></li>
-						{{/each}}
-		            </ul>
-		        </div>
+					<div class="title-group btn-group">
+			            <button type="button" data-toggle="dropdown" id="title-1" class="title-button form-input btn btn-default dropdown-toggle">
+			            	{{title1}} 
+			            	<span class="caret"></span>
+			            </button>
+			            <ul class="title-dropdown dropdown-menu">
+			                {{#each titles1}}
+								<li id="{{id}}" class="title1-option title-option"><a href="#">{{title}}</a></li>
+							{{/each}}
+			            </ul>
+			        </div>
 
-		        <div class="title-group btn-group">
-		            <button type="button" data-toggle="dropdown" id="title-2" class="title-button form-input btn btn-default dropdown-toggle">
-		            	{{title2}} 
-		            	<span class="caret"></span>
-		            </button>
-		            <ul class="title-dropdown dropdown-menu">
-		                {{#each titles2}}
-							<li id="{{title}}" class="title2-option title-option"><a href="#">{{title}}</a></li>
-						{{/each}}
-		            </ul>
-		        </div>
+			        <div class="title-group btn-group">
+			            <button type="button" data-toggle="dropdown" id="title-2" class="title-button form-input disabled btn btn-default dropdown-toggle">
+			            	{{title2}} 
+			            	<span class="caret"></span>
+			            </button>
+			            <ul class="title-dropdown dropdown-menu">
+			                {{#each titles2}}
+								<li id="{{id}}" class="title2-option title-option"><a href="#">{{title}}</a></li>
+							{{/each}}
+			            </ul>
+			        </div>
 
-		        <div class="title-group btn-group">
-		            <button type="button" data-toggle="dropdown" id="title-3" class="title-button form-input btn btn-default dropdown-toggle">
-		            	{{title3}} 
-		            	<span class="caret"></span>
-		            </button>
-		            <ul class="title-dropdown dropdown-menu">
-		                {{#each titles3}}
-							<li id="{{title}}" class="title3-option title-option"><a href="#">{{title}}</a></li>
-						{{/each}}
-		            </ul>
-		        </div>
+			        <div class="title-group btn-group">
+			            <button type="button" data-toggle="dropdown" id="title-3" class="title-button form-input disabled btn btn-default dropdown-toggle">
+			            	{{title3}} 
+			            	<span class="caret"></span>
+			            </button>
+			            <ul class="title-dropdown dropdown-menu">
+			                {{#each titles3}}
+								<li id="{{id}}" class="title3-option title-option"><a href="#">{{title}}</a></li>
+							{{/each}}
+			            </ul>
+			        </div>
 
-				<!--<select id="title-1" name="title-1">
-					<option value="">Please select</option>
+			        <div class="title-group btn-group">
+			            <button type="button" id="title-4" class="title-button form-input disabled btn btn-default">
+			            	gender?
+			            	
+			            </button>
+			        </div>
 
-					{{#each titles1}}
-						<option value="{{title}}">{{title}}</option>
-					{{/each}}
+				</div>
 
-				</select>
+				<div class="share-form-content">
 
-				<select id="title-2" name="title-2">
-					{{#each titles2}}
-						<option value="{{title}}">{{title}}</option>
-					{{/each}}
-				</select>
+					<div class="form-input-group">
+						<input type="text" name="name" id="form-name" value="" class="form-input" placeholder="Your name (optional)">
+					</div>
 
-				<select id="title-3" name="title-3">
-					{{#each titles3}}
-						<option value="{{title}}">{{title}}</option>
-					{{/each}}
-				</select>
+					<div class="form-input-group">
+						<input type="text" name="twitter-handle" id="form-twitter-handle" value="" class="form-input" placeholder="@YourTwitterHandle (optional)">
+					</div>
 
-				<select name="title-4">
-					<option value="">gender?</option>
-				</select>-->
-			</div>
+					<div class="form-input-group">
+						<textarea name="experience" id="form-experience" value="" class="form-input" placeholder="Your experiences (optional)"></textarea>
+					</div>	
 
-			<div class="share-form-content">
-				<input type="text" name="name" id="form-name" value="" class="name form-input" placeholder="Your name (optional)">
-				<input type="text" name="twitter-handle" id="form-twitter-handle" value="" class="name form-input" placeholder="@YourTwitterHandle (optional)">
-				<input type="textArea" name="experience" id="form-experience" value="" class="name form-input" placeholder="Your experiences (optional)">
-				<input type="text" name="link" id="form-link" value="" class="name form-input" placeholder="Link to photo, video or post (optional)">
-				<a href="#">Upload a photo</a>
-				<hr/>
-				<input type="submit" name="submit" id="form-submit" value="Submit your experience" class="submit form-submit"/>
-			</div>
-		</form>
+					<div class="form-input-group">
+						<input type="text" name="link" id="form-link" value="" class="form-input" placeholder="Link to photo, video or post (optional)">
+					</div>
+
+					<div class="form-upload-group">
+						<a href="#" class="link-with-icon">
+							<span>Upload a photo</span>
+							<i class="fa fa-upload"></i>
+						</a>
+					</div>
+
+					<hr/>
+
+					<div class="from-submit-group">
+						<p id="title-error" class="form-error">Please choose a title!</p>
+						<p id="content-error" class="form-error">Please either share your experience or a photo / video!</p>
+						<p id="send-error" class="form-error">There's been an error submitting your message, please try again later!</p>
+						<p id="send-success" class="form-success form-error">Thank you for your message!</p>
+						<input type="submit" name="submit" id="form-submit" value="Submit your experience" class="submit form-submit"/>
+						<i class="fa fa-caret-right"></i>
+					</div>
+				</div>
+			</form>
+		</div>
 	</section>
 </template>

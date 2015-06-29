@@ -35,6 +35,11 @@
     padding: 10px 0;
 
     color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      color: darken(#fff, 15%);
+    }
 
     @include desktop {
       display: inline;

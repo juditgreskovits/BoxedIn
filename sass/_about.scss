@@ -1,6 +1,44 @@
-.about, .about-footer {
+.about {
 	@extend .centered-content;
 	padding-left: 15px;
 	padding-right: 15px;
-	max-width: 600px;
+	max-width: 700px;
+	margin-bottom: 40px;
+
+	.about-heading {
+		@extend .centered-content;
+		margin-bottom: 30px;
+		max-width: 600px;
+		@include desktop {
+			max-width: 700px;
+			hr {
+				width: 69%;
+			}
+		}
+		div.about-logos {
+			padding-top: 6px;
+			padding-bottom: 6px;
+			img.about-logo {
+				margin-left: auto;
+				margin-right: auto;
+				@include desktop {
+					padding-right: 60px;
+					&:last-child {
+						padding-right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.about-content {
+		@extend .centered-content;
+		max-width: 600px;
+		margin-bottom: 30px;
+	}
+
+	.about-links {
+		@extend .centered-content;
+		max-width: 600px;
+	}
 }
