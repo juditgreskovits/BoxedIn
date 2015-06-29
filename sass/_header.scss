@@ -1,7 +1,8 @@
 .header-wrapper {
   height: 205px;
   overflow: hidden;
-  background: rgb(193, 150, 111);
+  background-image: url(img/header-texture.jpg);
+  background-repeat: none;
 
   @include desktop {
     height: 260px;
