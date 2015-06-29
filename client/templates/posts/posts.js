@@ -114,22 +114,14 @@ Template.posts.rendered = function() {
   refreshQuestion();
 
   // set them going
-  // var interval = setInterval(function() {
-  //   refreshQuestion();
-  // }, 5*1000);
-  // store this in the session so we can cancel it when the user
-  // navigates to another route
-  // Session.set('interval', interval);
+  var interval = setInterval(function() {
+    refreshQuestion();
+  }, 5*1000);
+  store this in the session so we can cancel it when the user
+  navigates to another route
+  Session.set('interval', interval);
 
-  //debug
-  $(window).keypress(function(event) {
-    if(event.which === 102) {
-      refreshQuestion();
-    }
-  })
-  //end debug
-
-  // re
+  // re-initialise whenever the viewport width updates
   $(window).resize(initQuestionAnimation)
 
 }
