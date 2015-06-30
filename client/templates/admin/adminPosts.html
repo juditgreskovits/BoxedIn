@@ -1,0 +1,59 @@
+<template name="adminPosts">
+	<section id="admin-posts" class="admin-posts">
+		<h3 class="title">Posts Admin</h3>
+      <div class="container-fluid">
+
+        <div class="admin-posts-row row">
+
+
+          
+      		
+      			{{#each posts}}
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="posts-grid">
+      			  {{> adminPostsPost}}
+              </div>
+              </div> 
+      			{{/each}} 
+      		
+         
+
+        </div>
+
+      </div>
+  </section>
+</template>
+
+<template name="adminPostsPost">
+  <div class="post">
+
+    <img src="{{ image }}" alt="">
+    <h4><a href="#" class="title">{{ title }}</a></h4>
+    <div class="truncate">
+      <p>{{ experience }}</p>
+    </div>
+    <p>
+      <a href="https://twitter.com/{{ twitterHandle }}">
+        {{ twitterHandle }}
+      </a>
+    </p>
+
+    <hr/>
+
+    <form id="admin-post-form">
+      <div id="admin-post-form-moderation">
+        <p>Moderate: 
+          <label><input type="radio" name="moderation" value="1" {{isApproved moderated}}> approved</label>
+          <label><input type="radio" name="moderation" value="2" {{isRejected moderated}}> rejected</label>
+        </p> 
+      </div>
+      <div id="admin-post-form-promotion">
+        <p>Promote: 
+          <label><input type="checkbox" name="promotion" {{isPromoted promoted}} {{isPromotionDisabled moderated}}> promoted</label>
+        </p> 
+      </div>
+    </form>
+
+  </div>
+
+</template>

@@ -5,7 +5,7 @@ Session.setDefault('colorOffset', 0);
 Template.posts.helpers({
 
 	posts: function() {
-		return Post.find();
+		return Post.find({moderated: 1}, {sort: {promoted: -1}});
 	}
 });
 

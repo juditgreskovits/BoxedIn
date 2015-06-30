@@ -56,14 +56,6 @@
 	div.share-form-content {
 		@extend .centered-content;
 		max-width: 600px;
-		div.form-input-group {
-			@extend .content-shadow;
-			margin-bottom: 12px;
-
-			.form-input {
-				width: 100%;
-			}
-		}
 		textarea#form-experience {
 			vertical-align: top;
 			resize: none;
@@ -76,16 +68,6 @@
 		div.from-submit-group {
 			p {
 				margin-bottom: 3px;
-			}
-			input.form-submit {
-				background-color: transparent;
-				border: none;
-				padding: 0;
-				text-decoration: underline;
-				font-weight: 700;
-				&:focus {
-					outline: none;
-				}
 			}
 		}
 		hr {

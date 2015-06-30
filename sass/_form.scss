@@ -27,3 +27,23 @@
 .form-success {
 	color: $word-dark-blue;
 }
+
+div.form-input-group {
+	@extend .content-shadow;
+	margin-bottom: 12px;
+
+	.form-input {
+		width: 100%;
+	}
+}
+
+input.form-submit {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	text-decoration: underline;
+	font-weight: 700;
+	&:focus {
+		outline: none;
+	}
+}

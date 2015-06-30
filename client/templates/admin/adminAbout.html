@@ -1,0 +1,19 @@
+<template name="adminAbout">
+	<section id="admin-about" class="admin-about">
+		<h3 class="title">About Admin</h3>
+			
+			<form id="admin-about-form">
+
+				<div class="form-input-group">
+					{{#with about}}
+						<textarea name="about" id="form-about" value="{{about}}" class="form-input" placeholder="Your experiences (optional)"></textarea>
+					{{/with}}
+				</div>
+
+				<input type="submit" name="submit" id="form-submit" value="Update" class="submit form-submit"/>
+				<i class="fa fa-caret-right"></i>
+
+			</form>
+
+	</section>
+</template>

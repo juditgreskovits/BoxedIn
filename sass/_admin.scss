@@ -1,0 +1,24 @@
+.admin-about {
+	@extend .centered-content;
+	max-width: 700px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-bottom: 40px;
+	textarea#form-about {
+		vertical-align: top;
+		resize: none;
+		height: 300px;
+	}
+}
+
+.admin-access-denied {
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.admin-posts {
+
+	div.admin-posts-row {
+		width: 100%;
+	}
+}
