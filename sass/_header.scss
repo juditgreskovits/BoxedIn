@@ -3,6 +3,7 @@
   overflow: hidden;
   background-image: url(img/header-texture.jpg);
   background-repeat: none;
+  background-size: cover;
 
   @include desktop {
     height: 260px;
