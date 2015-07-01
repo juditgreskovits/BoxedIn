@@ -21,7 +21,11 @@
 			img.about-logo {
 				margin-left: auto;
 				margin-right: auto;
+				display: block;
+				padding-bottom: 20px;
 				@include desktop {
+					display: inline-block;
+					padding-bottom: 0;
 					padding-right: 60px;
 					&:last-child {
 						padding-right: 0;

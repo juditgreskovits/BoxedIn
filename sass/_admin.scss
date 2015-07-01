@@ -7,7 +7,10 @@
 	textarea#form-about {
 		vertical-align: top;
 		resize: none;
-		height: 300px;
+		height: 500px;
+		@include desktop {
+		    height: 300px;
+		}
 	}
 }
 
@@ -20,5 +23,14 @@
 
 	div.admin-posts-row {
 		width: 100%;
+	}
+}
+
+#admin-navigation {
+
+	padding-top: 10px;
+
+	a, .divider {
+		display: inline;
 	}
 }

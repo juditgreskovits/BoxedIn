@@ -17,8 +17,9 @@ if(Post.find().count() === 0) {
 		var author = authors[getRandomIndex(authors.length)];
 		var image = 'http://static1.squarespace.com/static/539f8621e4b033a62776b4e4/t/53d01a53e4b0768eeba485bb/1406147179601/gender.jpg_resized_460_.jpeg?format=1500w';
 		var twitterHandle = '@evelynjordan';
-		var promoted = getRandomBoolean();
-		var moderated = true; //getRandomBoolean();
+		var link = 'http://thump.vice.com/en_uk/article/the-15-weirdest-things-we-overheard-in-glastonburys-dance-tents?utm_source=thumptwitteruk';
+    var promoted = getRandomBoolean();
+		var moderated = 0;
 
 
 		Post.insert({
@@ -26,6 +27,7 @@ if(Post.find().count() === 0) {
 			experience: experience,
 			author: author,
 			image: image,
+      link: link,
 			twitterHandle: twitterHandle,
 			promoted: promoted,
 			moderated: moderated,

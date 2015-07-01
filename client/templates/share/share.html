@@ -73,9 +73,13 @@
 						<input type="text" name="link" id="form-link" value="" class="form-input" placeholder="Link to photo, video or post (optional)">
 					</div>
 
-					<div class="form-upload-group">
-						<input type="file" name="image-upload" id="form-image-upload" value="Upload a photo" class="submit form-submit" accept="image/*">
+					<div class="form-upload-group link-width-icon">
+						<span id="form-image-upload" class="submit form-submit">
+							Upload a photo<input type="file" name="image-upload"  accept="image/*">
+						</span>
 						<i class="fa fa-upload"></i>
+						<span id="processing">Processing...</span>
+						<span id="done">Done!</span>
 					</div>
 
 					<hr/>

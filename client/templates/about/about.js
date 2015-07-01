@@ -2,6 +2,7 @@ Template.about.helpers({
 
 	about: function() {
 
-		return About.findOne().about;
+		var a = About.findOne().about.split('\n\n').join('</p><p>');
+		return '<p>' + a + '</p>';
 	}
 });

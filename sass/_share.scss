@@ -73,5 +73,10 @@
 		hr {
 			margin-top: 16px;
 		}
+		div.form-upload-group {
+			#processing, #done {
+				display: none;
+			}
+		}
 	}
 }
