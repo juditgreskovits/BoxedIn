@@ -1,8 +1,18 @@
-Template.adminPosts.events({
+Template.adminPosts.rendered = function() {
+  $grid = $('#posts-grid');
 
-	
-
-});
+  $grid.imagesLoaded( function() {
+    // init Isotope after all images have loaded
+    $grid.isotope({
+      itemSelector: '.post',
+      masonry: {
+        columnWidth: 320,
+        gutter: 20,
+        isFitWidth: true
+      }
+    });
+  });
+};
 
 Template.adminPostsPost.helpers({
 
