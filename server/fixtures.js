@@ -10,7 +10,7 @@ if(Post.find().count() === 0) {
 
 	var authors = ['Evelyn Jordan', 'Geraldine Hope', 'Lilian Charles', 'Ludmilla Immaculate'];
 
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < 50; i++) {
 
 		var title = 'What influences your gender';
 		var experience = loremIpsum[getRandomIndex(loremIpsum.length)];
@@ -18,7 +18,7 @@ if(Post.find().count() === 0) {
 		var image = 'http://static1.squarespace.com/static/539f8621e4b033a62776b4e4/t/53d01a53e4b0768eeba485bb/1406147179601/gender.jpg_resized_460_.jpeg?format=1500w';
 		var twitterHandle = '@evelynjordan';
 		var promoted = getRandomBoolean();
-		var moderated = true; //getRandomBoolean();
+		var moderated = getRandomIndex(4);
 
 
 		Post.insert({

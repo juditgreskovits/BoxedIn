@@ -14,6 +14,50 @@ Template.adminPosts.rendered = function() {
   });
 };
 
+function refreshGrid(config) {
+  $('#posts-grid').isotope(config);
+}
+
+Template.adminPosts.events({
+  'change, #state-filter': function(event) {
+    console.debug('state', event.target.selectedIndex);
+    var moderatedState = event.target.selectedIndex;
+    if(moderatedState === undefined) return;
+    var config = {};
+
+    if(moderatedState === 3) {
+      config.filter = '*';
+    } else {
+      config.filter = function() {
+        return $(this).data('moderatedState') === moderatedState;
+      };
+    }
+
+    refreshGrid(config);
+
+  },
+  'change, #promoted-filter': function(event) {
+    console.debug('promoted', event.target.selectedIndex);
+    var promotedState = event.target.selectedIndex;
+    if(promotedState === undefined) return;
+    var config = {};
+
+    if(promotedState === 2) {
+      config.filter = '*';
+    } else {
+      config.filter = function() {
+        var passesPromtedFilter = promotedState ?
+          !$(this).data('promotedState') :
+          $(this).data('promotedState') ;
+        var approved = $(this).data('moderatedState') === 1;
+        return approved && passesPromtedFilter 
+      };
+    }
+
+    refreshGrid(config);
+  }
+})
+
 Template.adminPostsPost.helpers({
 
 	isApproved: function(moderated) {

@@ -2,6 +2,29 @@
 	<section id="admin-posts" class="admin-posts">
 		<h3 class="title">Posts Admin</h3>
       <div class="container-fluid">
+        <div class="filters">
+          <div class="state">
+            <div class="state">
+              <span>Show me </span>
+              <select name="" id="state-filter">
+                <option>unmoderated</option>
+                <option>approved</option>
+                <option>rejected</option>
+                <option selected>all</option>
+              </select>
+              <span> posts</span>
+            </div>
+            <div class="promoted">
+              <span>Oh and show me </span>
+              <select name="" id="promoted-filter">
+                <option>promoted</option>
+                <option>non promoted</option>
+                <option selected>all</option>
+              </select>
+              <span> posts while you're at it - ONLY SHOW ME FOR APPROVED POSTS</span>
+            </div>
+          </div>
+        </div>
         <div id="posts-grid" class="posts-grid">
           {{#each posts}}
             {{> adminPostsPost}}
@@ -12,7 +35,9 @@
 </template>
 
 <template name="adminPostsPost">
-  <div class="post">
+  <div class="post"
+    data-moderated-state="{{ moderated }}"
+    data-promoted-state="{{ promoted }}">
 
     <img src="{{ image }}" alt="">
     <h4><a href="#" class="title">{{ title }}</a></h4>
