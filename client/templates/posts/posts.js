@@ -13,7 +13,7 @@ Template.postsPost.events({
 	'click, touchend a.title': function(e) {
 		if(!dragging) {
 			e.preventDefault();
-			Router.go('post', {slug: this.slug});
+			Router.go('post', {_id: this._id});
 		}
 	}
 });
