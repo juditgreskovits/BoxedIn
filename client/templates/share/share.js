@@ -111,7 +111,7 @@ Template.share.events({
 				var imageData = dataUrl.substring(index);
 
 				var options = {
-					apiKey: 'ee6ab771668ff50',
+					apiKey: '1cef0969e415a3f',
 					image: imageData
 				}; 
 				Imgur.upload(options, function(error, data) {

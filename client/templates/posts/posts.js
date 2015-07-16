@@ -4,9 +4,22 @@ Session.setDefault('colorOffset', 0);
 
 Template.posts.helpers({
 
-	posts: function() {
-		return Post.find({moderated: 1}, {sort: {promoted: -1}});
-	}
+  posts: function() {
+    return Post.find({moderated: 1}, {sort: {promoted: -1}});
+  }
+
+});
+
+Template.postsPost.helpers({
+
+  imageThumb: function() {
+    var image = this.image;
+    if(image && image.indexOf('imgur') != -1) {
+      return Imgur.toThumbnail(image, Imgur.LARGE_THUMBNAIL);
+    }
+    return image;
+  }
+
 });
 
 Template.postsPost.events({
@@ -107,6 +120,11 @@ Template.posts.rendered = function() {
   $(".truncate").dotdotdot({
     ellipsis  : '...',
     height: 200
+  });
+
+  $(".link").dotdotdot({
+    ellipsis  : '...',
+    height: 20
   });
 
   // initialise questions
